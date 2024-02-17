@@ -5,6 +5,7 @@
 
 # Changelog (1.0.1)
 Added support for buttons
+
 Improved interactionCreate speed (?)
 
 # Installation
