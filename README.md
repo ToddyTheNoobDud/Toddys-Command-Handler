@@ -7,10 +7,14 @@
 First release
 
 # Installation
-Get node 20 LTS (din't test w 18, 16 so you can try yourself)
+Get node 20 LTS (din't test w 18, 16 so you can try yourself) 
+
 download this repository as a zip
+
 open terminal and type pnpm install
+
 open config.js and put your bot token and id
+
 start debugging and enjoy
 
 # Bugs, crashes
