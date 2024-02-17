@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { token } from "./config.js";
 import { CommandHandler } from "./src/structures/Commands.js";
 import { EventHandler } from "./src/structures/Events.js";
+import { ButtonHandler } from './src/structures/Button.js'
 
 let start = performance.now();
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -20,10 +21,12 @@ const client = new Client({
 });
 
 client.events = new Map();
+client.buttonCommands = new Map();
 client.slashCommands = new Map();
 
 CommandHandler(client, rootPath);
 EventHandler(client, rootPath);
+ButtonHandler(client, rootPath);
 client.login(token);
 
 let end = performance.now();
