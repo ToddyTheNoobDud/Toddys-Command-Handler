@@ -1,21 +1,22 @@
-import { existsSync, readdirSync, statSync } from 'node:fs'
-import { join, extname } from "path";
+import { readdirSync } from 'fs';
+import { join, extname } from 'path';
 export const Filereader = (dir) => {
-    if (!existsSync(dir)) return [];
-
+try {
     const files = [];
     const directoryData = readdirSync(dir);
 
     for (const file of directoryData) {
-        const filePath = join(dir, file);
-        const stats = statSync(filePath);
+      const filePath = join(dir, file);
 
-        if (stats.isFile() && extname(filePath) === ".js") {
-            files.push(filePath);
-        } else if (stats.isDirectory()) {
-            files.push(...Filereader(filePath));
-        }
+      if (extname(filePath) === '.js') {
+        files.push(filePath);
+      } else {
+        files.push(...Filereader(filePath));
+      }
     }
 
     return files;
+  } catch (error) {
+    return [];
+  }
 };
