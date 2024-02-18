@@ -8,7 +8,8 @@ export const Event = {
                 break;
             case interaction.isButton():
                 const buttonCommand = client.buttonCommands.get(interaction.customId);
-                if (buttonCommand) buttonCommand.run(client, interaction);
+                if (buttonCommand) buttonCommand.run(client, interaction) 
+                else await interaction.reply({ content: 'Button is disabled', ephemeral: true })
                 break;
         }
     }
