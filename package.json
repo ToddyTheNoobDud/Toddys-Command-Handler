@@ -1,6 +1,6 @@
 {
 	"name": "toddys-command-handler",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"main": "bot.js",
 	"dependencies": {
 		"discord.js": "^14.14.1"
