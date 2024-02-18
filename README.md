@@ -1,7 +1,7 @@
 # Toddys-Command-Handler
  An fast, Simple discord bot handler, built with PNPM and nodeJS 20
 # Progress
- Current in alpha, will be added button support, context menu, modal menu, an mongoDB support, etc
+ Current in Beta, will be added context menu, modal menu, an mongoDB support, etc
 
 # Changelog (1.0.3)
 Added error Handler
