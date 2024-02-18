@@ -3,10 +3,13 @@
 # Progress
  Current in alpha, will be added button support, context menu, modal menu, an mongoDB support, etc
 
-# Changelog (1.0.1)
-Added support for buttons
+# Changelog (1.0.2)
+Improved Commands speed
 
-Improved interactionCreate speed (?)
+Added support for disabling / enabling buttons
+
+Improved Events, Buttons speed
+
 
 # Installation
 Get node 20 LTS (din't test w 18, 16 so you can try yourself) 
