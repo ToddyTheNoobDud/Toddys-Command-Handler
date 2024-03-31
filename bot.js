@@ -5,7 +5,8 @@ import { fileURLToPath } from "node:url";
 import { token } from "./config.js";
 import { CommandHandler } from "./src/structures/Commands.js";
 import { EventHandler } from "./src/structures/Events.js";
-import { ButtonHandler } from './src/structures/Button.js'
+import { ButtonHandler } from './src/structures/Button.js';
+import { ModalManager } from './src/structures/Modal.js'
 
 let start = performance.now();
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -21,6 +22,7 @@ intents: [
 client.events = new Map();
 client.buttonCommands = new Map();
 client.slashCommands = new Map();
+client.modals = new Map();
 
 CommandHandler(client, rootPath);
 EventHandler(client, rootPath);
