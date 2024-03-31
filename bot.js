@@ -27,6 +27,7 @@ client.modals = new Map();
 CommandHandler(client, rootPath);
 EventHandler(client, rootPath);
 ButtonHandler(client, rootPath);
+ModalManager(client, rootPath);
 client.login(token);
 
 let end = performance.now();
