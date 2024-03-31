@@ -3,8 +3,8 @@
 # Progress
  Current in Beta, will be added context menu, modal menu, an mongoDB support, etc
 
-# Changelog (1.0.3)
-Added error Handler
+# Changelog (1.0.4)
+Add support for Modals
 
 # Installation
 Get node 20 LTS (din't test w 18, 16 so you can try yourself) 
