@@ -12,10 +12,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export const rootPath = __dirname;
 
 const client = new Client({
-  intents: [
-      GatewayIntentBits.Guilds |
-      GatewayIntentBits.GuildMessages |
-      GatewayIntentBits.MessageContent,
+intents: [
+    GatewayIntentBits.Guilds | GatewayIntentBits.DirectMessages | GatewayIntentBits.GuildMessageReactions | GatewayIntentBits.DirectMessageReactions | GatewayIntentBits.GuildVoiceStates,
   ],
   partials: [Partials.Channel],
 });
