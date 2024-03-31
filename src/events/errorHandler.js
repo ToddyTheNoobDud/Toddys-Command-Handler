@@ -1,20 +1,21 @@
 // The following code was not tested
 
 import { t } from "tasai";
-import { EventEmitter } from "node:events";
 
-const eventEmitter = new EventEmitter();
-
-eventEmitter.on(
-  /unhandledRejection|uncaughtException|rejectionHandled|uncaughtExceptionMonitor|warning|beforeExit|exit/,
-  async (eventName, ...args) => {
+export const Event = {
+  name: 'errorHandler',
+  run: async (client, error) => {
+    const events = ["unhandledRejection", "uncaughtException", "rejectionHandled", "uncaughtExceptionMonitor", "warning", "beforeExit", "exit"];
+    for (const event of events) {
+      process.on(event, (...args) => console.log(
+        t.bgBrightBlack.toFunction()(`[${event}] `) +
+        t.bold.white.toFunction()(`${event}: ${args.join(" || ")}`)
+      ));
+    }
     console.log(
-      t.bgBrightBlack.toFunction()(`[${eventName}] `) +
-        t.bold.white.toFunction()(`${eventName}: ${args.join(" || ")}`)
+      t.bgBrightBlack.toFunction()("[errorHandler] ") +
+      t.bold.white.toFunction()("Loaded")
     );
   }
-);
-console.log(
-  t.bgBrightBlack.toFunction()("[errorHandler] ") +
-    t.bold.white.toFunction()("Loaded")
-);
+}
+
