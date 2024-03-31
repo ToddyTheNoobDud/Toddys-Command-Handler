@@ -11,6 +11,11 @@ export const Event = {
                 if (buttonCommand) buttonCommand.run(client, interaction) 
                 else await interaction.reply({ content: 'Button is disabled', ephemeral: true })
                 break;
+            case interaction.isModalSubmit():
+                const modalInteraction = client.modals.get(interaction.customId);
+                if (!modalInteraction) return;
+                else await modalInteraction.run(client, interaction);
+                break;
         }
     }
 }
